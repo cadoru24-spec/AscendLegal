@@ -10,6 +10,7 @@
   --accent-gold: #C9A24D;
   --text-white: #FFFFFF;
   --text-gray: #D1D5DB;
+  --container-bg: rgba(10, 31, 51, 0.85); /* ligero contraste */
 }
 
 * {
@@ -25,88 +26,87 @@ body {
   line-height: 1.6;
 }
 
-.container {
-  max-width: 800px;
+.main-container {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
+  padding: 2rem;
 }
 
-header {
-  padding: 80px 0 60px;
+.container {
+  background-color: var(--container-bg);
+  padding: 40px 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  text-align: center;
 }
 
 .logo {
   width: 100%;
   max-width: 280px;
   height: auto;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .headline {
   color: var(--accent-gold);
   font-size: 2.5rem;
   font-weight: 400;
-  letter-spacing: 0.05rem;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
 .subheadline {
   color: var(--text-white);
-  font-size: 1.25rem;
-  max-width: 600px;
+  font-size: 1.2rem;
+  max-width: 650px;
   margin: 0 auto;
   font-weight: 300;
 }
 
 .section {
-  padding: 60px 0;
+  margin-top: 30px;
   text-align: left;
 }
 
-.title {
+.section h2 {
   color: var(--accent-gold);
-  font-size: 1.75rem;
-  font-weight: 400;
-  margin-bottom: 20px;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
   text-transform: uppercase;
-  letter-spacing: 0.03rem;
 }
 
 .content {
   color: var(--text-gray);
-  font-size: 1.1rem;
-  max-width: 650px;
-  margin: 0 auto 20px auto;
+  font-size: 1.05rem;
+  margin-bottom: 20px;
 }
 
 .list {
   list-style: none;
-  margin: 20px 0;
+  margin: 10px 0 20px 0;
   padding: 0;
 }
 
 .list li {
   color: var(--text-white);
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .list li::before {
   content: "—";
   color: var(--accent-gold);
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .automation-detail {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .automation-detail h3 {
   color: var(--accent-gold);
   font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .automation-detail p {
@@ -131,8 +131,8 @@ header {
 }
 
 footer {
-  padding: 60px 0 100px;
   text-align: center;
+  padding: 40px 0;
 }
 
 .footer-text {
@@ -146,40 +146,31 @@ footer {
     font-size: 1.8rem;
   }
   .subheadline {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
   }
   .logo {
     max-width: 200px;
-  }
-  header {
-    padding: 60px 0 40px;
-  }
-  .section {
-    text-align: center;
   }
 }
 </style>
 </head>
 <body>
 
-<header class="container">
-  <img src="LOGO-AL.png" alt="Ascend Lawyers Logo" class="logo">
-  <h1 class="headline">AI Automation for Divorce Law Firms</h1>
-  <p class="subheadline">Intelligent systems that handle client communication, starting with Voice AI Receptionists that never miss a call.</p>
-</header>
+<div class="main-container">
 
-<main class="container">
-  <div class="separator"></div>
+  <header class="container">
+    <img src="LOGO-AL.png" alt="Ascend Lawyers Logo" class="logo">
+    <h1 class="headline">AI Automation for Divorce Law Firms</h1>
+    <p class="subheadline">Intelligent systems that handle client communication, starting with Voice AI Receptionists that never miss a call.</p>
+  </header>
 
-  <section class="section">
-    <h2 class="title">Voice AI Receptionist</h2>
+  <section class="container section">
+    <h2>Voice AI Receptionist</h2>
     <p class="content">We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
   </section>
 
-  <div class="separator"></div>
-
-  <section class="section">
-    <h2 class="title">Additional Automations</h2>
+  <section class="container section">
+    <h2>Additional Automations</h2>
     <ul class="list">
       <li>AI Client Intake Agents</li>
       <li>Automated Follow-ups</li>
@@ -203,12 +194,12 @@ footer {
 
     <p class="note">Additional legal-tech solutions coming soon.</p>
   </section>
-</main>
 
-<footer class="container">
-  <div class="separator"></div>
-  <p class="footer-text">Contact: info@yourdomain.com</p>
-</footer>
+  <footer class="container">
+    <p class="footer-text">Contact: info@yourdomain.com</p>
+  </footer>
+
+</div>
 
 </body>
 </html>
