@@ -101,7 +101,21 @@ body {
   flex: 1 1 250px;
   max-width: 300px;
   text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease forwards;
 }
+
+.solution-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(255, 194, 77, 0.5);
+}
+
+/* animación al cargar */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
 .solution-card h3 {
   color: var(--accent-gold);
@@ -223,6 +237,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
