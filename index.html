@@ -20,17 +20,12 @@
 }
 
 body {
-  background-color: var(--primary-navy);
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(255,255,255,0.02) 0,
-    rgba(255,255,255,0.02) 1px,
-    transparent 1px,
-    transparent 20px
-  );
-  color: var(--text-white);
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
+  animation: bgShift 30s linear infinite;
+}
+
+@keyframes bgShift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
 }
 
 .main-container {
@@ -59,13 +54,8 @@ body {
 }
 
 .headline {
-  color: var(--accent-gold);
-  font-size: 2.5rem;
-  font-weight: 400;
-  margin-bottom: 16px;
-  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
 }
-
 .subheadline {
   color: var(--text-white);
   font-size: 1.2rem;
@@ -117,11 +107,12 @@ body {
 }
 
 
-.solution-card h3 {
-  color: var(--accent-gold);
-  font-size: 1.3rem;
-  margin-bottom: 8px;
+.solution-card:hover h3 {
+  color: #FFD966; /* dorado más brillante */
+  transform: scale(1.02);
+  transition: transform 0.3s ease, color 0.3s ease;
 }
+
 
 .solution-card p {
   color: var(--text-gray);
@@ -137,12 +128,19 @@ body {
 }
 
 .separator {
-  height: 1px;
+  height: 2px;
   width: 60px;
   background-color: var(--accent-gold);
   margin: 40px auto;
-  opacity: 0.6;
+  opacity: 0.8;
+  animation: expand 1s ease forwards;
 }
+
+@keyframes expand {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
 
 footer {
   text-align: center;
@@ -237,6 +235,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
