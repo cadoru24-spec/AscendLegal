@@ -20,13 +20,19 @@
 }
 
 body {
-  animation: bgShift 30s linear infinite;
+  background-color: var(--primary-navy);
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.02) 0,
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  color: var(--text-white);
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
 }
 
-@keyframes bgShift {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 1000px; }
-}
 
 .main-container {
   max-width: 1000px;
@@ -235,6 +241,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
