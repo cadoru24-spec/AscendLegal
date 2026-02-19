@@ -8,6 +8,7 @@
 :root {
   --primary-navy: #0A1F33;
   --accent-gold: #C9A24D;
+  --accent-gold-light: #FFD966;
   --text-white: #FFFFFF;
   --text-gray: #D1D5DB;
   --container-bg: rgba(10, 31, 51, 0.85);
@@ -20,6 +21,9 @@
 }
 
 body {
+  font-family: "Times New Roman", Times, serif;
+  line-height: 1.6;
+  color: var(--text-white);
   background-color: var(--primary-navy);
   background-image: repeating-linear-gradient(
     45deg,
@@ -28,11 +32,14 @@ body {
     transparent 1px,
     transparent 20px
   );
-  color: var(--text-white);
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
+  background-size: 50px 50px;
+  animation: bgShift 60s linear infinite;
 }
 
+@keyframes bgShift {
+  from { background-position: 0 0; }
+  to { background-position: 1000px 1000px; }
+}
 
 .main-container {
   max-width: 1000px;
@@ -54,20 +61,43 @@ body {
   width: 150px;
   height: auto;
   margin-bottom: 20px;
-  border: 10px solid var(--accent-gold);
+  border: 3px solid var(--accent-gold);
   border-radius: 12px;
   padding: 5px;
 }
 
 .headline {
-  font-family: "Poppins", sans-serif;
+  color: var(--accent-gold);
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 16px;
+  text-transform: uppercase;
 }
+
 .subheadline {
   color: var(--text-white);
   font-size: 1.2rem;
   max-width: 650px;
-  margin: 0 auto;
+  margin: 0 auto 20px auto;
   font-weight: 300;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 8px;
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid var(--accent-gold);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-gold-light);
+  transform: translateY(-3px);
 }
 
 .section {
@@ -106,19 +136,17 @@ body {
   box-shadow: 0 12px 20px rgba(255, 194, 77, 0.5);
 }
 
-/* animación al cargar */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-
 .solution-card:hover h3 {
-  color: #FFD966; /* dorado más brillante */
+  color: var(--accent-gold-light);
   transform: scale(1.02);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
+.solution-card h3 {
+  color: var(--accent-gold);
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
 
 .solution-card p {
   color: var(--text-gray);
@@ -147,6 +175,10 @@ body {
   to { width: 60px; }
 }
 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 footer {
   text-align: center;
@@ -160,19 +192,10 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .headline {
-    font-size: 1.8rem;
-  }
-  .subheadline {
-    font-size: 1.05rem;
-  }
-  .logo {
-    max-width: 120px;
-  }
-  .solutions-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  .headline { font-size: 1.8rem; }
+  .subheadline { font-size: 1.05rem; }
+  .logo { max-width: 120px; }
+  .solutions-grid { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -183,38 +206,39 @@ footer {
   <header class="container">
     <img src="LOGO-AL.png" alt="Ascend Lawyers Logo" class="logo">
     <h1 class="headline">AI Automation for Divorce Law Firms</h1>
-    <p class="subheadline">Intelligent systems that handle client communication, starting with Voice AI Receptionists that never miss a call.</p>
+    <p class="subheadline">
+      Intelligent systems that handle client communication, starting with Voice AI Receptionists that never miss a call.
+    </p>
+    <a href="tel:+1234567890" class="cta-button">Book a Demo: +1 (234) 567-890</a>
   </header>
 
-<section class="container section">
-  <h2>Voice AI Receptionist</h2>
-  <p>We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
+  <!-- Voice AI Receptionist con ventajas -->
+  <section class="container section">
+    <h2>Voice AI Receptionist</h2>
+    <p>We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <h3>24/7 Client Call Capture</h3>
+        <p>No lost clients</p>
+      </div>
+      <div class="solution-card">
+        <h3>Automated Scheduling & Reminders</h3>
+        <p>Saves time</p>
+      </div>
+      <div class="solution-card">
+        <h3>Only 10% (or less) of Revenue Recovered</h3>
+        <p>Pricing logic</p>
+      </div>
+      <div class="solution-card">
+        <h3>Immediate ROI</h3>
+        <p>One recovered client = monthly cost covered</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- Lista de ventajas rápidas -->
-  <div class="solutions-grid">
-    <div class="solution-card">
-      <h3>24/7 Client Call Capture</h3>
-      <p>No lost clients</p>
-    </div>
-    <div class="solution-card">
-      <h3>Automated Scheduling & Reminders</h3>
-      <p>Saves time</p>
-    </div>
-    <div class="solution-card">
-      <h3>Only 10% (or less) of Revenue Recovered</h3>
-      <p>Pricing logic</p>
-    </div>
-    <div class="solution-card">
-      <h3>Immediate ROI</h3>
-      <p>One recovered client = monthly cost covered</p>
-    </div>
-  </div>
-</section>
-
-
+  <!-- Additional Automations -->
   <section class="container section">
     <h2>Additional Automations</h2>
-
     <div class="solutions-grid">
       <div class="solution-card">
         <h3>AI Client Intake Agents</h3>
@@ -229,7 +253,6 @@ footer {
         <p>Keep clients updated automatically without manual status calls.</p>
       </div>
     </div>
-
     <p class="note">Additional legal-tech solutions coming soon.</p>
   </section>
 
@@ -241,10 +264,3 @@ footer {
 
 </body>
 </html>
-
-
-
-
-
-
-
