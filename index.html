@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<div class="offer-small">
-  <p>7 Days Free Trial – Offer valid until March 6</p>
+<!-- Banner oferta -->
+<div class="offer-banner">
+  <p class="offer-main">7 Days Free Trial</p>
+  <p class="offer-date">Offer valid until March 6</p>
 </div>
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,16 +28,37 @@
 * { box-sizing: border-box; margin:0; padding:0; }
 
 
-.offer-small {
+.offer-banner {
+  position: fixed; /* siempre visible */
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: var(--primary-navy);
   color: var(--accent-gold);
   text-align: center;
-  font-size: 0.85rem;
-  font-weight: 500;
-  padding: 6px 0;
+  padding: 12px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Poppins", sans-serif;
 }
+
+.offer-main {
+  font-size: 1.5rem;  /* grande y llamativo */
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.offer-date {
+  font-size: 0.9rem;  /* pequeño */
+  margin: 2px 0 0 0;
+  font-weight: 500;
+  text-transform: none;
+}
+
 
 /* Fondo y overlay */
 body {
@@ -304,6 +328,7 @@ footer {
 
 </body>
 </html>
+
 
 
 
