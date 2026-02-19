@@ -10,7 +10,7 @@
   --accent-gold: #C9A24D;
   --text-white: #FFFFFF;
   --text-gray: #D1D5DB;
-  --container-bg: rgba(10, 31, 51, 0.85); /* ligero contraste */
+  --container-bg: rgba(10, 31, 51, 0.85);
 }
 
 * {
@@ -27,7 +27,7 @@ body {
 }
 
 .main-container {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -37,15 +37,18 @@ body {
   padding: 40px 30px;
   border-radius: 12px;
   margin-bottom: 40px;
+  border: 2px solid var(--accent-gold);
   box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   text-align: center;
 }
 
 .logo {
-  width: 100%;
-  max-width: 280px;
+  width: 150px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  border: 3px solid var(--accent-gold);
+  border-radius: 12px;
+  padding: 5px;
 }
 
 .headline {
@@ -66,50 +69,40 @@ body {
 
 .section {
   margin-top: 30px;
-  text-align: left;
+  text-align: center;
 }
 
 .section h2 {
   color: var(--accent-gold);
   font-size: 1.8rem;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   text-transform: uppercase;
 }
 
-.content {
-  color: var(--text-gray);
-  font-size: 1.05rem;
-  margin-bottom: 20px;
+.solutions-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
-.list {
-  list-style: none;
-  margin: 10px 0 20px 0;
-  padding: 0;
+.solution-card {
+  background-color: var(--primary-navy);
+  border: 1px solid var(--accent-gold);
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: left;
 }
 
-.list li {
-  color: var(--text-white);
-  margin-bottom: 10px;
-}
-
-.list li::before {
-  content: "—";
+.solution-card h3 {
   color: var(--accent-gold);
-  margin-right: 8px;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
-.automation-detail {
-  margin-bottom: 20px;
-}
-
-.automation-detail h3 {
-  color: var(--accent-gold);
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
-
-.automation-detail p {
+.solution-card p {
   color: var(--text-gray);
   font-size: 1rem;
   margin: 0;
@@ -149,7 +142,11 @@ footer {
     font-size: 1.05rem;
   }
   .logo {
-    max-width: 200px;
+    max-width: 120px;
+  }
+  .solutions-grid {
+    flex-direction: column;
+    align-items: center;
   }
 }
 </style>
@@ -166,30 +163,25 @@ footer {
 
   <section class="container section">
     <h2>Voice AI Receptionist</h2>
-    <p class="content">We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
+    <p>We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
   </section>
 
   <section class="container section">
     <h2>Additional Automations</h2>
-    <ul class="list">
-      <li>AI Client Intake Agents</li>
-      <li>Automated Follow-ups</li>
-      <li>Case Notifications</li>
-    </ul>
 
-    <div class="automation-detail">
-      <h3>Intake Automation</h3>
-      <p>Standardize lead qualification with automated intake workflows.</p>
-    </div>
-
-    <div class="automation-detail">
-      <h3>Follow-up Systems</h3>
-      <p>Nurture potential clients through intelligent SMS and email sequences.</p>
-    </div>
-
-    <div class="automation-detail">
-      <h3>Case Notifications</h3>
-      <p>Keep clients updated automatically without manual status calls.</p>
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <h3>AI Client Intake Agents</h3>
+        <p>Standardize lead qualification with automated intake workflows.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Automated Follow-ups</h3>
+        <p>Nurture potential clients through intelligent SMS and email sequences.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Case Notifications</h3>
+        <p>Keep clients updated automatically without manual status calls.</p>
+      </div>
     </div>
 
     <p class="note">Additional legal-tech solutions coming soon.</p>
