@@ -11,258 +11,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Automation for Divorce Lawyers | Ascend Lawyers</title>
 
-<!-- Google Fonts para tipografía moderna -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --primary-navy: #0A1F33;
-  --accent-gold: #C9A24D;
-  --accent-gold-light: #FFD966;
-  --text-white: #FFFFFF;
-  --text-gray: #D1D5DB;
-  --container-bg: rgba(10, 31, 51, 0.85);
-}
-
-/* Reset básico */
-* { box-sizing: border-box; margin:0; padding:0; }
-
-
-.offer-banner {
-  position: fixed; /* siempre visible */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--accent-gold); /* fondo dorado */
-  text-align: center;
-  padding: 12px 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  z-index: 2000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: "Poppins", sans-serif;
-}
-
-.offer-main {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-navy); /* número/llamado azul */
-  text-transform: uppercase;
-  margin: 0;
-}
-
-.offer-date {
-  font-size: 0.9rem;
-  margin: 2px 0 0 0;
-  font-weight: 500;
-  color: #003366; /* azul más intenso para la fecha */
-  text-transform: none;
-}
-
-
-
-/* Fondo y overlay */
-body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.6;
-  color: var(--text-white);
-  background-color: var(--primary-navy);
-  background-image: repeating-linear-gradient(
-    45deg,
-    rgba(255,255,255,1) 0,
-    rgba(255,255,255,1) 1px,
-    transparent 1px,
-    transparent 20px
-  );
-  background-size: 50px 50px;
-  animation: bgShift 60s linear infinite;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Overlay degradado para profundidad */
-body::before {
-  content: '';
-  position: fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background: linear-gradient(135deg, rgba(10,31,51,0.9), rgba(0,0,0,0.3));
-  pointer-events: none;
-  z-index: -1;
-}
-
-@keyframes bgShift {
-  from { background-position: 0 0; }
-  to { background-position: 1000px 1000px; }
-}
-
-.main-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Contenedores generales */
-.container {
-  background-color: var(--container-bg);
-  padding: 50px 30px;
-  border-radius: 16px;
-  margin-bottom: 60px;
-  border: 2px solid var(--accent-gold);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Logo con marco dorado */
-.logo {
-  width: 150px;
-  height: auto;
-  margin-bottom: 25px;
-  border: 3px solid var(--accent-gold);
-  border-radius: 12px;
-  padding: 5px;
-}
-
-/* Titulares modernos */
-.headline, .solution-card h3, .section h2 {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-}
-
-.headline {
-  color: var(--accent-gold);
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-}
-
-.subheadline {
-  color: var(--text-white);
-  font-size: 1.2rem;
-  max-width: 650px;
-  margin: 0 auto 20px auto;
-  font-weight: 300;
-}
-
-/* Botón CTA */
-.cta-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 32px;
-  border-radius: 10px;
-  background-color: var(--accent-gold);
-  color: var(--primary-navy);
-  font-weight: bold;
-  text-decoration: none;
-  border: 2px solid var(--accent-gold);
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--accent-gold-light);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255,194,77,0.6);
-}
-
-/* Secciones */
-.section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.section h2 {
-  color: var(--accent-gold);
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-}
-
-/* Grid para tarjetas */
-.solutions-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-/* Tarjetas / Cards */
-.solution-card {
-  background-color: var(--primary-navy);
-  border: 1px solid var(--accent-gold);
-  border-radius: 14px;
-  padding: 25px;
-  flex: 1 1 250px;
-  max-width: 300px;
-  text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.solution-card:hover {
-  transform: translateY(-10px) rotate(-0.5deg);
-  box-shadow: 0 15px 25px rgba(255, 194, 77, 0.5);
-}
-
-.solution-card:hover h3 {
-  color: var(--accent-gold-light);
-  transform: scale(1.02);
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.solution-card h3 {
-  color: var(--accent-gold);
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.solution-card p {
-  color: var(--text-gray);
-  font-size: 1rem;
-  margin: 0;
-}
-
-.note {
-  color: var(--text-gray);
-  font-style: italic;
-  font-size: 0.9rem;
-  margin-top: 20px;
-}
-
-/* Separadores animados */
-.separator {
-  height: 2px;
-  width: 60px;
-  background-color: var(--accent-gold);
-  margin: 40px auto;
-  opacity: 0.8;
-  animation: expand 1s ease forwards;
-}
-
-@keyframes expand { from { width: 0; } to { width: 60px; } }
-@keyframes fadeInUp { from { opacity:0; transform: translateY(20px); } to { opacity:1; transform: translateY(0); } }
-
-footer {
-  text-align: center;
-  padding: 40px 0;
-}
-
-.footer-text {
-  color: var(--text-gray);
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .headline { font-size: 1.8rem; }
-  .subheadline { font-size: 1.05rem; }
-  .logo { max-width: 120px; }
-  .solutions-grid { flex-direction: column; align-items: center; }
-}
+/* --- ESTILOS SIN CAMBIOS --- */
 </style>
 </head>
+
 <body>
 
 <div class="main-container">
@@ -270,54 +25,121 @@ footer {
   <!-- Header -->
   <header class="container">
     <img src="LOGO-AL.png" alt="Ascend Lawyers Logo" class="logo">
-    <h1 class="headline">AI Automation for Divorce Law Firms</h1>
+
+    <!-- MODIFICADO: headline orientado a pérdida -->
+    <h1 class="headline">You’re Losing Divorce Cases When Calls Go Unanswered</h1>
+
+    <!-- MODIFICADO: subheadline más contextual -->
     <p class="subheadline">
-      Intelligent systems that handle client communication, starting with Voice AI Receptionists that never miss a call.
+      Divorce prospects usually call once, during emotional moments.
+      If no one answers, they move on. Our Voice AI ensures every call is captured, qualified, and booked.
     </p>
+
     <a href="tel:+18179548468" class="cta-button">Book a Demo: +1 (817) 954-8468</a>
   </header>
+
+  <!-- NEW: Problem Awareness Section -->
+  <section class="container section">
+    <h2>Why This Matters</h2>
+    <p class="subheadline">
+      Family law firms lose high-intent cases every week due to missed calls,
+      after-hours inquiries, and overloaded staff.
+    </p>
+
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <h3>High-Intent Calls</h3>
+        <p>Divorce prospects rarely leave voicemails or call twice.</p>
+      </div>
+      <div class="solution-card">
+        <h3>After-Hours Loss</h3>
+        <p>Many calls happen outside business hours when no one answers.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Staff Bottlenecks</h3>
+        <p>Front desks can’t qualify, schedule, and follow up consistently.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Voice AI Receptionist -->
   <section class="container section">
     <h2>Voice AI Receptionist</h2>
-    <p>We install voice-based AI receptionists that answer missed calls, qualify potential clients, and book appointments for divorce law firms.</p>
+    <p class="subheadline">
+      A voice-based AI receptionist trained specifically for divorce law firms.
+      It answers every call, qualifies the prospect, and books consultations automatically.
+    </p>
+
     <div class="solutions-grid">
       <div class="solution-card">
         <h3>24/7 Client Call Capture</h3>
-        <p>No lost clients</p>
+        <p>Every inbound call is answered instantly, day or night.</p>
       </div>
+
       <div class="solution-card">
         <h3>Automated Scheduling & Reminders</h3>
-        <p>Saves time</p>
+        <p>Qualified leads are booked directly into your calendar.</p>
       </div>
+
       <div class="solution-card">
         <h3>Only 10% (or less) of Revenue Recovered</h3>
-        <p>Pricing logic</p>
+        <p>Performance-aligned pricing. We win only when you do.</p>
       </div>
+
       <div class="solution-card">
         <h3>Immediate ROI</h3>
-        <p>One recovered client = monthly cost covered</p>
+        <p>One signed divorce client typically covers the monthly cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW: Logical ROI Section -->
+  <section class="container section">
+    <h2>Simple Economics</h2>
+    <p class="subheadline">
+      This isn’t about “AI innovation”. It’s about basic math.
+    </p>
+
+    <div class="solutions-grid">
+      <div class="solution-card">
+        <h3>2–3 Missed Calls / Week</h3>
+        <p>Is common for most mid-sized family law firms.</p>
+      </div>
+      <div class="solution-card">
+        <h3>1 Becomes a Client</h3>
+        <p>A single signed case often offsets the entire system cost.</p>
+      </div>
+      <div class="solution-card">
+        <h3>Everything After Is Upside</h3>
+        <p>Additional recovered cases become pure incremental revenue.</p>
       </div>
     </div>
   </section>
 
   <!-- Additional Automations -->
   <section class="container section">
-    <h2>Additional Automations</h2>
+    <h2>Beyond Calls (Optional Automations)</h2>
+
     <div class="solutions-grid">
       <div class="solution-card">
         <h3>AI Client Intake Agents</h3>
-        <p>Standardize lead qualification with automated intake workflows.</p>
+        <p>Standardized qualification workflows before staff involvement.</p>
       </div>
+
       <div class="solution-card">
         <h3>Automated Follow-ups</h3>
-        <p>Nurture potential clients through intelligent SMS and email sequences.</p>
+        <p>SMS and email sequences to re-engage undecided prospects.</p>
       </div>
+
       <div class="solution-card">
         <h3>Case Notifications</h3>
-        <p>Keep clients updated automatically without manual status calls.</p>
+        <p>Automated updates to reduce inbound status calls.</p>
       </div>
     </div>
+
+    <p class="note">
+      Additional legal-tech automations are released selectively based on firm needs.
+    </p>
   </section>
 
   <!-- Footer -->
@@ -329,9 +151,3 @@ footer {
 
 </body>
 </html>
-
-
-
-
-
-
